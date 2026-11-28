@@ -1,0 +1,2672 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Scuola Aurora: istituto comprensivo inclusivo e innovativo. Iscrizioni 2026/2027 aperte." />
+  <meta name="theme-color" content="#0e7c86" />
+  <title>Scuola Aurora | Dove i talenti prendono il volo</title>
+
+  <script>
+    document.documentElement.classList.add("js");
+  </script>
+
+  <style>
+    :root {
+      --ink: #102a43;
+      --ink-2: #243b53;
+      --muted: #5d7185;
+      --paper: #fbfdfb;
+      --surface: #ffffff;
+      --teal: #0e7c86;
+      --teal-dark: #095f68;
+      --teal-soft: #e7f4f2;
+      --yellow: #f6c453;
+      --coral: #ff7a68;
+      --line: #dfe8eb;
+      --shadow: 0 30px 80px rgba(16, 42, 67, 0.12);
+      --shadow-sm: 0 12px 30px rgba(16, 42, 67, 0.08);
+      --radius: 24px;
+      --max: 1180px;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--paper);
+      color: var(--ink);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    input,
+    select,
+    textarea {
+      font: inherit;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    img,
+    svg {
+      display: block;
+      max-width: 100%;
+    }
+
+    [hidden] {
+      display: none !important;
+    }
+
+    ::selection {
+      background: var(--yellow);
+      color: var(--ink);
+    }
+
+    :focus-visible {
+      outline: 3px solid var(--yellow);
+      outline-offset: 3px;
+    }
+
+    .container {
+      width: min(calc(100% - 40px), var(--max));
+      margin-inline: auto;
+    }
+
+    .skip-link {
+      position: fixed;
+      top: -100px;
+      left: 16px;
+      z-index: 1001;
+      padding: 12px 18px;
+      border-radius: 12px;
+      background: var(--ink);
+      color: #fff;
+      font-weight: 700;
+      transition: top 0.2s;
+    }
+
+    .skip-link:focus {
+      top: 16px;
+    }
+
+    /* HEADER */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(251, 253, 251, 0.86);
+      -webkit-backdrop-filter: blur(18px);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid transparent;
+      transition:
+        background 0.2s,
+        border-color 0.2s,
+        box-shadow 0.2s;
+    }
+
+    .site-header.scrolled {
+      background: rgba(255, 255, 255, 0.95);
+      border-color: var(--line);
+      box-shadow: 0 10px 30px rgba(16, 42, 67, 0.06);
+    }
+
+    .nav-wrap {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      min-height: 80px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      flex: 0 0 auto;
+    }
+
+    .brand-mark {
+      position: relative;
+      width: 46px;
+      height: 46px;
+      border-radius: 15px;
+      background: var(--ink);
+      color: #fff;
+      display: grid;
+      place-items: center;
+      font-size: 1.35rem;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      box-shadow: 0 8px 18px rgba(16, 42, 67, 0.18);
+    }
+
+    .brand-mark::after {
+      content: "";
+      position: absolute;
+      right: 7px;
+      bottom: 7px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--yellow);
+      border: 2px solid var(--ink);
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      color: var(--ink);
+      font-size: 1rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1.05;
+    }
+
+    .brand-text small {
+      margin-top: 3px;
+      color: var(--muted);
+      font-size: 9.5px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    .main-nav {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      margin-left: auto;
+    }
+
+    .main-nav a:not(.nav-cta) {
+      position: relative;
+      padding: 6px 0;
+      color: var(--ink-2);
+      font-size: 14px;
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+
+    .main-nav a:not(.nav-cta)::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -2px;
+      width: 0;
+      height: 2px;
+      border-radius: 2px;
+      background: var(--teal);
+      transition: width 0.2s;
+    }
+
+    .main-nav a:not(.nav-cta):hover {
+      color: var(--teal);
+    }
+
+    .main-nav a:not(.nav-cta):hover::after {
+      width: 100%;
+    }
+
+    .main-nav .nav-cta {
+      margin-left: 8px;
+      padding: 12px 18px;
+      border-radius: 99px;
+      background: var(--ink);
+      color: #fff;
+      font-size: 13.5px;
+      font-weight: 700;
+      transition:
+        background 0.2s,
+        transform 0.2s;
+    }
+
+    .main-nav .nav-cta:hover {
+      background: var(--teal-dark);
+      transform: translateY(-1px);
+    }
+
+    .menu-toggle {
+      display: none;
+      width: 44px;
+      height: 44px;
+      padding: 0;
+      border: 0;
+      border-radius: 12px;
+      background: transparent;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .menu-toggle span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      border-radius: 2px;
+      background: var(--ink);
+      transition:
+        transform 0.25s,
+        opacity 0.25s;
+    }
+
+    .menu-toggle[aria-expanded="true"] span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+
+    .menu-toggle[aria-expanded="true"] span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .menu-toggle[aria-expanded="true"] span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+
+    body.nav-open {
+      overflow: hidden;
+    }
+
+    /* HERO */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 170px 0 100px;
+      background:
+        radial-gradient(circle at 74% 20%, rgba(246, 196, 83, 0.2), transparent 32%),
+        radial-gradient(circle at 8% 30%, rgba(14, 124, 134, 0.08), transparent 30%),
+        linear-gradient(180deg, #fbfdfb 0%, #f5faf7 100%);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(16, 42, 67, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(16, 42, 67, 0.035) 1px, transparent 1px);
+      background-size: 54px 54px;
+      -webkit-mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.65), transparent 72%);
+      mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.65), transparent 72%);
+    }
+
+    .hero-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+      align-items: center;
+      gap: 48px;
+    }
+
+    .announcement {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin-bottom: 24px;
+      padding: 8px 14px;
+      border: 1px solid #cfe3dd;
+      border-radius: 99px;
+      background: rgba(255, 255, 255, 0.72);
+      color: var(--teal-dark);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.03em;
+      box-shadow: 0 8px 20px rgba(14, 124, 134, 0.06);
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--coral);
+      box-shadow: 0 0 0 4px rgba(255, 122, 104, 0.2);
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%,
+      100% {
+        box-shadow: 0 0 0 4px rgba(255, 122, 104, 0.2);
+      }
+      50% {
+        box-shadow: 0 0 0 8px rgba(255, 122, 104, 0);
+      }
+    }
+
+    .hero-copy h1 {
+      max-width: 760px;
+      margin: 0 0 24px;
+      font-size: clamp(3.2rem, 7.2vw, 6.2rem);
+      font-weight: 800;
+      line-height: 0.94;
+      letter-spacing: -0.06em;
+    }
+
+    .highlight {
+      padding-right: 0.03em;
+      background: linear-gradient(
+        180deg,
+        transparent 68%,
+        rgba(246, 196, 83, 0.55) 68% 92%,
+        transparent 92%
+      );
+    }
+
+    .hero-lead {
+      max-width: 570px;
+      margin: 0;
+      color: var(--muted);
+      font-size: 1.12rem;
+      line-height: 1.7;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 32px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 52px;
+      padding: 0 26px;
+      border: 1px solid transparent;
+      border-radius: 14px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      transition:
+        transform 0.2s,
+        background 0.2s,
+        border-color 0.2s,
+        color 0.2s,
+        box-shadow 0.2s;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      background: var(--teal);
+      color: #fff;
+      box-shadow: 0 12px 24px rgba(14, 124, 134, 0.2);
+    }
+
+    .btn-primary:hover {
+      background: var(--teal-dark);
+    }
+
+    .btn-outline {
+      border-color: #cbd5e1;
+      background: #fff;
+      color: var(--ink);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--teal);
+      box-shadow: 0 10px 22px rgba(16, 42, 67, 0.08);
+    }
+
+    .btn-light {
+      background: #fff;
+      color: var(--ink);
+    }
+
+    .btn-light:hover {
+      background: var(--yellow);
+    }
+
+    .btn svg {
+      width: 18px;
+      height: 18px;
+      flex: 0 0 auto;
+    }
+
+    .hero-trust {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 34px;
+    }
+
+    .hero-trust p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 12.5px;
+      line-height: 1.45;
+    }
+
+    .hero-trust strong {
+      color: var(--ink);
+    }
+
+    .avatars {
+      display: flex;
+    }
+
+    .avatar {
+      width: 34px;
+      height: 34px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      font-size: 11px;
+      font-weight: 800;
+    }
+
+    .avatars .avatar {
+      margin-left: -8px;
+      border: 2px solid #fff;
+    }
+
+    .avatars .avatar:first-child {
+      margin-left: 0;
+    }
+
+    .avatar-1 {
+      background: #e7f4f2;
+      color: #0b5f68;
+    }
+
+    .avatar-2 {
+      background: #fde8c5;
+      color: #8a5a00;
+    }
+
+    .avatar-3 {
+      background: #ffe0dc;
+      color: #a13d30;
+    }
+
+    .avatar-4 {
+      background: #dde9f6;
+      color: #315e8a;
+    }
+
+    /* HERO VISUAL */
+    .hero-visual {
+      position: relative;
+      min-height: 540px;
+      display: grid;
+      place-items: center;
+    }
+
+    .visual-orbit {
+      position: absolute;
+      width: min(440px, 86%);
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background:
+        radial-gradient(circle at 28% 28%, rgba(255, 238, 180, 0.95), transparent 34%),
+        radial-gradient(circle at 72% 68%, #87ddd6, transparent 42%),
+        linear-gradient(135deg, #0d8a8f, #0a5f69);
+      box-shadow:
+        inset 0 0 60px rgba(255, 255, 255, 0.15),
+        0 32px 80px rgba(14, 124, 134, 0.28);
+      transform: rotate(-8deg);
+    }
+
+    .visual-orbit::before {
+      content: "";
+      position: absolute;
+      inset: 38px;
+      border: 1px dashed rgba(255, 255, 255, 0.38);
+      border-radius: 50%;
+    }
+
+    .visual-orbit::after {
+      content: "";
+      position: absolute;
+      top: 12%;
+      right: 8%;
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      background: var(--yellow);
+      box-shadow: 0 0 0 18px rgba(246, 196, 83, 0.18);
+    }
+
+    .visual-card-main {
+      position: relative;
+      z-index: 2;
+      width: min(390px, 88%);
+      padding: 34px;
+      border: 1px solid rgba(255, 255, 255, 0.9);
+      border-radius: 30px;
+      background: rgba(255, 255, 255, 0.95);
+      box-shadow: 0 30px 80px rgba(16, 42, 67, 0.18);
+      -webkit-backdrop-filter: blur(12px);
+      backdrop-filter: blur(12px);
+      transform: rotate(2deg);
+    }
+
+    .visual-kicker {
+      color: var(--teal);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .visual-card-main h2 {
+      margin: 8px 0 10px;
+      font-size: 2.3rem;
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: -0.04em;
+    }
+
+    .visual-card-main h2 em {
+      color: var(--teal);
+      font-style: normal;
+    }
+
+    .visual-card-main p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .visual-mini {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      margin-top: 26px;
+    }
+
+    .visual-mini div {
+      padding: 12px 8px;
+      border: 1px solid #e8f0ee;
+      border-radius: 14px;
+      background: #f5f9f8;
+      text-align: center;
+    }
+
+    .visual-mini strong {
+      display: block;
+      color: var(--ink);
+      font-size: 20px;
+      line-height: 1.1;
+    }
+
+    .visual-mini small {
+      color: var(--muted);
+      font-size: 10px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .floating-card {
+      position: absolute;
+      z-index: 3;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 13px 16px;
+      border: 1px solid #eef4f2;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.96);
+      box-shadow: var(--shadow-sm);
+      animation: float 6s ease-in-out infinite;
+    }
+
+    .fc-1 {
+      top: 5%;
+      right: 0;
+    }
+
+    .fc-2 {
+      bottom: 4%;
+      left: -2%;
+      animation-delay: -3s;
+    }
+
+    @keyframes float {
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    .floating-card strong {
+      display: block;
+      font-size: 13px;
+      line-height: 1.2;
+    }
+
+    .floating-card small {
+      color: var(--muted);
+      font-size: 11.5px;
+    }
+
+    .mini-icon {
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      flex: 0 0 38px;
+      border-radius: 12px;
+    }
+
+    .mini-icon svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    .mini-icon.yellow {
+      background: #fff5d6;
+      color: #9a6a00;
+    }
+
+    .mini-icon.coral {
+      background: #ffe8e4;
+      color: #b74032;
+    }
+
+    /* STATS */
+    .stats-strip {
+      position: relative;
+      z-index: 5;
+      margin-top: -32px;
+    }
+
+    .stats-inner {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      overflow: hidden;
+      border: 1px solid #dce9e4;
+      border-radius: 24px;
+      background: #dce9e4;
+      box-shadow: 0 18px 50px rgba(16, 42, 67, 0.08);
+    }
+
+    .stat {
+      padding: 26px 22px;
+      background: #fff;
+      text-align: center;
+    }
+
+    .stat strong {
+      display: block;
+      color: var(--ink);
+      font-size: 2rem;
+      line-height: 1.1;
+      letter-spacing: -0.04em;
+    }
+
+    .stat span {
+      display: block;
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    /* SECTIONS */
+    .section {
+      padding: 96px 0;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--teal);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 24px;
+      height: 2px;
+      border-radius: 2px;
+      background: var(--teal);
+    }
+
+    .eyebrow.light {
+      color: #fff;
+    }
+
+    .eyebrow.light::before {
+      background: var(--yellow);
+    }
+
+    .section-heading {
+      margin-bottom: 38px;
+    }
+
+    .section-heading.center {
+      max-width: 800px;
+      margin-right: auto;
+      margin-left: auto;
+      text-align: center;
+    }
+
+    .section-heading h2 {
+      margin: 14px 0 16px;
+      font-size: clamp(2rem, 4.2vw, 3.2rem);
+      font-weight: 800;
+      line-height: 1.05;
+      letter-spacing: -0.04em;
+    }
+
+    .section-heading h2 em {
+      color: var(--teal);
+      font-family: Georgia, "Times New Roman", serif;
+      font-style: italic;
+      font-weight: 500;
+    }
+
+    .section-heading p {
+      max-width: 650px;
+      margin: 0;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .section-heading.center p {
+      margin-inline: auto;
+    }
+
+    /* ABOUT */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      align-items: start;
+      gap: 64px;
+    }
+
+    .about-copy p {
+      margin: 0 0 16px;
+      color: var(--muted);
+    }
+
+    .about-copy .lead {
+      color: var(--ink-2);
+      font-size: 1.18rem;
+    }
+
+    .values {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 32px;
+    }
+
+    .value-card {
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: #fff;
+      transition:
+        transform 0.25s,
+        box-shadow 0.25s,
+        border-color 0.25s;
+    }
+
+    .value-card:hover {
+      border-color: #c5ded8;
+      box-shadow: var(--shadow-sm);
+      transform: translateY(-4px);
+    }
+
+    .icon-box {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 16px;
+      border-radius: 13px;
+      background: var(--teal-soft);
+      color: var(--teal-dark);
+    }
+
+    .icon-box svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    .value-card h3 {
+      margin: 0 0 4px;
+      font-size: 0.95rem;
+    }
+
+    .value-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.55;
+    }
+
+    /* OFFERA FORMATIVA */
+    .course-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .course-card {
+      display: flex;
+      flex-direction: column;
+      padding: 28px;
+      border: 1px solid var(--line);
+      border-radius: 26px;
+      background: #fff;
+      transition:
+        transform 0.25s,
+        box-shadow 0.25s;
+    }
+
+    .course-card:hover {
+      box-shadow: var(--shadow);
+      transform: translateY(-6px);
+    }
+
+    .course-card.featured {
+      border-color: var(--ink);
+      background: var(--ink);
+      color: #fff;
+    }
+
+    .course-card.featured .icon-box {
+      background: rgba(255, 255, 255, 0.1);
+      color: var(--yellow);
+    }
+
+    .course-tag {
+      margin: 20px 0 8px;
+      color: var(--teal);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    .course-card.featured .course-tag {
+      color: var(--yellow);
+    }
+
+    .course-card h3 {
+      margin: 0 0 10px;
+      font-size: 1.6rem;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+    }
+
+    .course-card p {
+      margin: 0 0 18px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .course-card.featured p,
+    .course-card.featured li {
+      color: #cbd9e6;
+    }
+
+    .course-card ul {
+      display: grid;
+      gap: 8px;
+      margin: 0 0 24px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .course-card li {
+      position: relative;
+      padding-left: 22px;
+      color: var(--ink-2);
+      font-size: 13.5px;
+    }
+
+    .course-card li::before {
+      content: "";
+      position: absolute;
+      top: 0.55em;
+      left: 0;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--teal);
+    }
+
+    .course-card.featured li::before {
+      background: var(--yellow);
+    }
+
+    .course-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: auto;
+      color: var(--teal);
+      font-weight: 800;
+      font-size: 13.5px;
+    }
+
+    .course-card.featured .course-link {
+      color: var(--yellow);
+    }
+
+    .course-link svg {
+      width: 16px;
+      height: 16px;
+      transition: transform 0.2s;
+    }
+
+    .course-card:hover .course-link svg {
+      transform: translateX(3px);
+    }
+
+    /* SERVIZI */
+    .services {
+      background: linear-gradient(180deg, #f3f8f6, #f3f8f6);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      align-items: center;
+      gap: 64px;
+    }
+
+    .services .section-heading .btn {
+      margin-top: 24px;
+    }
+
+    .service-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .service-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 22px;
+      border: 1px solid #e4efeb;
+      border-radius: 20px;
+      background: #fff;
+      box-shadow: 0 10px 24px rgba(16, 42, 67, 0.03);
+    }
+
+    .service-icon {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      flex: 0 0 42px;
+      border-radius: 13px;
+      background: #eef8f4;
+      color: var(--teal-dark);
+    }
+
+    .service-icon svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    .service-item h3 {
+      margin: 0 0 4px;
+      font-size: 1rem;
+      letter-spacing: -0.02em;
+    }
+
+    .service-item p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13.5px;
+      line-height: 1.55;
+    }
+
+    /* QUOTE */
+    .quote-section {
+      position: relative;
+      overflow: hidden;
+      padding: 74px 0;
+      background: var(--yellow);
+    }
+
+    .quote-section::before,
+    .quote-section::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.28);
+    }
+
+    .quote-section::before {
+      top: -180px;
+      right: -80px;
+      width: 360px;
+      height: 360px;
+    }
+
+    .quote-section::after {
+      bottom: -220px;
+      left: -100px;
+      width: 300px;
+      height: 300px;
+    }
+
+    .quote-wrap {
+      position: relative;
+      z-index: 1;
+      max-width: 880px;
+      margin-inline: auto;
+      text-align: center;
+    }
+
+    .quote-icon {
+      height: 40px;
+      margin-bottom: 20px;
+      color: rgba(16, 42, 67, 0.2);
+      font-family: Georgia, serif;
+      font-size: 80px;
+      line-height: 0.4;
+    }
+
+    .quote-wrap blockquote {
+      margin: 0 0 28px;
+      font-size: clamp(1.4rem, 3vw, 2.3rem);
+      font-weight: 700;
+      line-height: 1.3;
+      letter-spacing: -0.03em;
+    }
+
+    .quote-author {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      text-align: left;
+    }
+
+    .quote-author .avatar {
+      width: 46px;
+      height: 46px;
+      border: 2px solid var(--yellow);
+      font-size: 14px;
+    }
+
+    .quote-author strong {
+      display: block;
+      font-size: 14px;
+    }
+
+    .quote-author small {
+      color: rgba(16, 42, 67, 0.65);
+      font-size: 12px;
+    }
+
+    /* NEWS */
+    .news-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .news-card {
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      background: #fff;
+      transition:
+        transform 0.25s,
+        box-shadow 0.25s;
+    }
+
+    .news-card:hover {
+      box-shadow: var(--shadow);
+      transform: translateY(-6px);
+    }
+
+    .news-thumb {
+      position: relative;
+      height: 180px;
+      overflow: hidden;
+    }
+
+    .thumb-1 {
+      background: linear-gradient(135deg, #0e7c86, #12b2aa);
+    }
+
+    .thumb-2 {
+      background: linear-gradient(135deg, #ff7a68, #ffb45e);
+    }
+
+    .thumb-3 {
+      background: linear-gradient(135deg, #0f2f4f, #2b6f8a);
+    }
+
+    .news-thumb::before,
+    .news-thumb::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+    }
+
+    .news-thumb::before {
+      top: -50px;
+      right: -20px;
+      width: 150px;
+      height: 150px;
+      background: rgba(255, 255, 255, 0.18);
+    }
+
+    .news-thumb::after {
+      bottom: -80px;
+      left: -30px;
+      width: 150px;
+      height: 150px;
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .news-tag {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      z-index: 1;
+      padding: 6px 10px;
+      border-radius: 99px;
+      background: rgba(255, 255, 255, 0.9);
+      color: var(--ink);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .news-number {
+      position: absolute;
+      right: 20px;
+      bottom: 10px;
+      z-index: 1;
+      color: rgba(255, 255, 255, 0.25);
+      font-size: 70px;
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: -0.06em;
+    }
+
+    .news-content {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      padding: 22px 24px 24px;
+    }
+
+    .news-meta {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 10px;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .news-card h3 {
+      margin: 0 0 12px;
+      font-size: 1.22rem;
+      line-height: 1.3;
+      letter-spacing: -0.02em;
+    }
+
+    .news-card p {
+      margin: 0 0 20px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .news-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: auto;
+      color: var(--teal);
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .news-link svg {
+      width: 15px;
+      height: 15px;
+      transition: transform 0.2s;
+    }
+
+    .news-link:hover svg {
+      transform: translateX(3px);
+    }
+
+    /* CTA */
+    .cta-band {
+      position: relative;
+      overflow: hidden;
+      padding: 86px 0;
+      background: var(--ink);
+      color: #fff;
+    }
+
+    .cta-band::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 85% 20%, rgba(14, 124, 134, 0.6), transparent 35%),
+        radial-gradient(circle at 10% 90%, rgba(246, 196, 83, 0.15), transparent 28%);
+    }
+
+    .cta-inner {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+    }
+
+    .cta-inner h2 {
+      margin: 12px 0 14px;
+      font-size: clamp(2rem, 4vw, 3.4rem);
+      line-height: 1.02;
+      letter-spacing: -0.04em;
+    }
+
+    .cta-inner h2 em {
+      color: var(--yellow);
+      font-family: Georgia, "Times New Roman", serif;
+      font-style: italic;
+      font-weight: 500;
+    }
+
+    .cta-inner p {
+      max-width: 520px;
+      margin: 0;
+      color: #c7d5df;
+    }
+
+    /* CONTATTI */
+    .contact {
+      background: #fff;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      align-items: start;
+      gap: 60px;
+    }
+
+    .contact-info h2 {
+      margin: 14px 0 14px;
+      font-size: clamp(2.2rem, 4vw, 3.4rem);
+      line-height: 1;
+      letter-spacing: -0.04em;
+    }
+
+    .contact-info > p {
+      max-width: 460px;
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .contact-details {
+      display: grid;
+      gap: 18px;
+      margin: 30px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .contact-details li {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+    }
+
+    .contact-icon {
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      flex: 0 0 38px;
+      border-radius: 12px;
+      background: #f2f7f6;
+      color: var(--teal-dark);
+    }
+
+    .contact-icon svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    .contact-details strong {
+      display: block;
+      color: var(--ink-2);
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .contact-details li > div > span {
+      display: block;
+      margin-top: 2px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .socials {
+      display: flex;
+      gap: 10px;
+      margin-top: 28px;
+    }
+
+    .social-link {
+      width: 40px;
+      height: 40px;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      color: var(--ink);
+      font-size: 11px;
+      font-weight: 800;
+      transition:
+        background 0.2s,
+        color 0.2s,
+        border-color 0.2s;
+    }
+
+    .social-link:hover {
+      border-color: var(--ink);
+      background: var(--ink);
+      color: #fff;
+    }
+
+    .contact-form {
+      padding: 32px;
+      border: 1px solid #e4efeb;
+      border-radius: 28px;
+      background: #f8fbfa;
+      box-shadow: 0 20px 60px rgba(16, 42, 67, 0.06);
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .form-field {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+
+    .form-field.full {
+      grid-column: 1 / -1;
+    }
+
+    .form-field label {
+      color: var(--ink-2);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .form-field input,
+    .form-field select,
+    .form-field textarea {
+      width: 100%;
+      padding: 13px 14px;
+      border: 1px solid #dce8e4;
+      border-radius: 13px;
+      outline: none;
+      background: #fff;
+      color: var(--ink);
+      font-size: 14px;
+      transition:
+        border-color 0.2s,
+        box-shadow 0.2s;
+    }
+
+    .form-field input::placeholder,
+    .form-field textarea::placeholder {
+      color: #95a5b4;
+    }
+
+    .form-field input:focus,
+    .form-field select:focus,
+    .form-field textarea:focus {
+      border-color: var(--teal);
+      box-shadow: 0 0 0 4px rgba(14, 124, 134, 0.1);
+    }
+
+    .form-field textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .checkbox-field {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-top: 16px;
+      color: var(--muted);
+      font-size: 12.5px;
+      line-height: 1.5;
+    }
+
+    .checkbox-field input {
+      width: 18px;
+      height: 18px;
+      margin-top: 2px;
+      accent-color: var(--teal);
+    }
+
+    .form-actions {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-top: 20px;
+    }
+
+    .form-note {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .form-success {
+      margin-top: 16px;
+      padding: 14px 16px;
+      border: 1px solid #c8e9d8;
+      border-radius: 14px;
+      background: #e7f7ef;
+      color: #185a3a;
+      font-size: 14px;
+    }
+
+    /* FOOTER */
+    .site-footer {
+      padding: 64px 0 24px;
+      background: var(--ink);
+      color: #dbe6ee;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr 1fr;
+      gap: 40px;
+    }
+
+    .footer-brand .brand-text {
+      color: #fff;
+    }
+
+    .footer-brand .brand-text small {
+      color: #9fb2c0;
+    }
+
+    .site-footer .brand-mark {
+      background: var(--yellow);
+      color: var(--ink);
+    }
+
+    .footer-brand p {
+      max-width: 280px;
+      margin: 14px 0 0;
+      color: #9fb2c0;
+    }
+
+    .footer-col h3 {
+      margin: 0 0 18px;
+      color: #8ea3b2;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .footer-col a {
+      display: inline-block;
+      padding: 6px 0;
+      color: #dbe6ee;
+      font-size: 14px;
+      transition: color 0.2s;
+    }
+
+    .footer-col a:hover {
+      color: var(--yellow);
+    }
+
+    .footer-col p {
+      margin: 0 0 10px;
+      color: #b7c6d1;
+      font-size: 14px;
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      margin-top: 48px;
+      padding-top: 22px;
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+      color: #8ea3b2;
+      font-size: 12px;
+    }
+
+    .footer-bottom p {
+      margin: 0;
+    }
+
+    .footer-bottom a {
+      color: #b7c6d1;
+    }
+
+    /* ANIMATIONS */
+    .js .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+    }
+
+    .js .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+      transition:
+        opacity 0.6s ease,
+        transform 0.6s ease;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 1080px) {
+      .hero-grid {
+        gap: 32px;
+      }
+
+      .about-grid,
+      .services-grid,
+      .contact-grid {
+        gap: 40px;
+      }
+
+      .news-thumb {
+        height: 160px;
+      }
+    }
+
+    @media (max-width: 920px) {
+      .main-nav {
+        position: fixed;
+        top: 80px;
+        right: 0;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 2px;
+        margin: 0;
+        padding: 14px 24px 24px;
+        border-bottom: 1px solid var(--line);
+        background: rgba(255, 255, 255, 0.98);
+        box-shadow: 0 18px 40px rgba(16, 42, 67, 0.12);
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-12px);
+        transition:
+          opacity 0.2s,
+          transform 0.2s,
+          visibility 0.2s;
+      }
+
+      .main-nav.open {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+
+      .main-nav a:not(.nav-cta) {
+        padding: 13px 0;
+        border-bottom: 1px solid #f0f4f5;
+        font-size: 15px;
+      }
+
+      .main-nav a:not(.nav-cta)::after {
+        display: none;
+      }
+
+      .main-nav .nav-cta {
+        margin: 12px 0 0;
+        text-align: center;
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
+
+      .hero {
+        padding: 140px 0 80px;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-visual {
+        min-height: 520px;
+        margin-top: 10px;
+      }
+
+      .about-grid,
+      .services-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .course-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .stats-inner {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .footer-grid {
+        grid-template-columns: 1.4fr 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .container {
+        width: min(calc(100% - 32px), var(--max));
+      }
+
+      .section {
+        padding: 72px 0;
+      }
+
+      .hero {
+        padding: 126px 0 72px;
+      }
+
+      .hero-copy h1 {
+        font-size: clamp(3rem, 12vw, 4.6rem);
+      }
+
+      .hero-visual {
+        min-height: 440px;
+        margin-top: 22px;
+      }
+
+      .visual-card-main {
+        width: min(420px, 92%);
+        padding: 28px;
+        transform: none;
+      }
+
+      .floating-card {
+        display: none;
+      }
+
+      .course-grid,
+      .news-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .values,
+      .service-list {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .footer-brand {
+        grid-column: 1 / -1;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        gap: 6px;
+        margin-top: 36px;
+      }
+
+      .cta-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .contact-form {
+        padding: 24px;
+      }
+
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .quote-section {
+        padding: 56px 0;
+      }
+
+      .quote-icon {
+        margin-bottom: 16px;
+        font-size: 64px;
+      }
+    }
+
+    @media (max-width: 540px) {
+      .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .hero-actions .btn {
+        width: 100%;
+      }
+
+      .hero-trust {
+        align-items: flex-start;
+      }
+
+      .hero-copy h1 {
+        font-size: clamp(2.8rem, 14vw, 4rem);
+      }
+
+      .stats-strip {
+        margin-top: -10px;
+      }
+
+      .stats-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .news-thumb {
+        height: 150px;
+      }
+
+      .news-card h3 {
+        font-size: 1.12rem;
+      }
+
+      .contact-details li {
+        gap: 12px;
+      }
+
+      .form-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .form-actions .btn {
+        width: 100%;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-brand {
+        grid-column: auto;
+      }
+
+      .quote-author {
+        align-items: flex-start;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Vai al contenuto</a>
+
+  <header class="site-header" id="top">
+    <div class="container nav-wrap">
+      <a class="brand" href="#home" aria-label="Scuola Aurora, torna all'inizio">
+        <span class="brand-mark" aria-hidden="true">A</span>
+        <span class="brand-text">
+          Scuola Aurora
+          <small>Istituto Comprensivo</small>
+        </span>
+      </a>
+
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-label="Apri menu"
+        aria-controls="main-nav"
+        aria-expanded="false"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="main-nav" id="main-nav" aria-label="Navigazione principale">
+        <a href="#chi-siamo">Chi siamo</a>
+        <a href="#offerta">Offerta formativa</a>
+        <a href="#servizi">Servizi</a>
+        <a href="#news">News</a>
+        <a href="#contatti">Contatti</a>
+        <a class="nav-cta" href="#contatti">Prenota una visita</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <div class="announcement">
+            <span class="dot" aria-hidden="true"></span>
+            Iscrizioni 2026/2027 aperte
+          </div>
+
+          <h1>
+            Dove i talenti
+            <span class="highlight">prendono il volo.</span>
+          </h1>
+
+          <p class="hero-lead">
+            Una scuola viva, inclusiva e attenta a ogni studente. Didattica
+            innovativa, laboratori creativi e una comunità che cresce insieme.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#offerta">
+              Scopri la scuola
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M5 12h14" />
+                <path d="m13 6 6 6-6 6" />
+              </svg>
+            </a>
+            <a class="btn btn-outline" href="#contatti">Prenota una visita</a>
+          </div>
+
+          <div class="hero-trust">
+            <div class="avatars" aria-hidden="true">
+              <span class="avatar avatar-1">G</span>
+              <span class="avatar avatar-2">M</span>
+              <span class="avatar avatar-3">S</span>
+              <span class="avatar avatar-4">A</span>
+            </div>
+            <p><strong>4,9/5</strong> il gradimento dei genitori della nostra comunità</p>
+          </div>
+        </div>
+
+        <div class="hero-visual" aria-hidden="true">
+          <div class="visual-orbit"></div>
+
+          <div class="visual-card-main">
+            <span class="visual-kicker">Benvenuti a Aurora</span>
+            <h2>Crescere,<br><em>insieme.</em></h2>
+            <p>Ogni giorno è una nuova scoperta.</p>
+
+            <div class="visual-mini">
+              <div><strong data-counter="450">450</strong><small>studenti</small></div>
+              <div><strong data-counter="32">32</strong><small>docenti</small></div>
+              <div><strong data-counter="25" data-suffix="+">25+</strong><small>laboratori</small></div>
+            </div>
+          </div>
+
+          <div class="floating-card fc-1">
+            <span class="mini-icon yellow">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 3h6" />
+                <path d="M10 3v5.4L4.7 17.8A2.4 2.4 0 0 0 6.8 21h10.4a2.4 2.4 0 0 0 2.1-3.2L14 8.4V3" />
+                <path d="M7.5 15h9" />
+              </svg>
+            </span>
+            <div>
+              <strong>Laboratori</strong>
+              <small>Spazio alle idee</small>
+            </div>
+          </div>
+
+          <div class="floating-card fc-2">
+            <span class="mini-icon coral">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20.8 5.8a5 5 0 0 0-7.1 0L12 7.5l-1.7-1.7a5 5 0 1 0-7.1 7.1L12 21l8.8-8.1a5 5 0 0 0 0-7.1Z" />
+              </svg>
+            </span>
+            <div>
+              <strong>Inclusione</strong>
+              <small>Ogni voce conta</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STATS -->
+    <section class="stats-strip" aria-label="Numeri della scuola">
+      <div class="container">
+        <div class="stats-inner">
+          <div class="stat">
+            <strong data-counter="450">450</strong>
+            <span>Studenti</span>
+          </div>
+          <div class="stat">
+            <strong data-counter="32">32</strong>
+            <span>Docenti</span>
+          </div>
+          <div class="stat">
+            <strong data-counter="25" data-suffix="+">25+</strong>
+            <span>Laboratori</span>
+          </div>
+          <div class="stat">
+            <strong data-counter="18">18</strong>
+            <span>Anni di storia</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHI SIAMO -->
+    <section class="section" id="chi-siamo">
+      <div class="container about-grid">
+        <div class="section-heading reveal">
+          <span class="eyebrow">Chi siamo</span>
+          <h2>Uno scuola <em>che ascolta</em> prima di insegnare.</h2>
+        </div>
+
+        <div class="about-copy reveal">
+          <p class="lead">
+            Siamo un istituto comprensivo che mette al centro le persone. La nostra
+            didattica unisce curiosità, relazione e responsabilità, con spazi e tempi
+            pensati per far crescere ogni studente.
+          </p>
+          <p>
+            Dal 2008 accompagniamo bambini e ragazzi in un percorso solido, che
+            valorizza i talenti e non lascia indietro nessuno. Genitori e docenti
+            collaborano ogni giorno, perché la scuola sia davvero di tutti.
+          </p>
+
+          <div class="values">
+            <article class="value-card">
+              <div class="icon-box">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M20.8 5.8a5 5 0 0 0-7.1 0L12 7.5l-1.7-1.7a5 5 0 1 0-7.1 7.1L12 21l8.8-8.1a5 5 0 0 0 0-7.1Z" />
+                </svg>
+              </div>
+              <h3>Relazione</h3>
+              <p>Ascoltiamo, valorizzando le persone e creando legami duraturi.</p>
+            </article>
+
+            <article class="value-card">
+              <div class="icon-box">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M9 18h6" />
+                  <path d="M10 22h4" />
+                  <path d="M12 2a7 7 0 0 0-4 12.7c.8.7 1 1.4 1 2.3h6c0-.9.2-1.6 1-2.3A7 7 0 0 0 12 2Z" />
+                </svg>
+              </div>
+              <h3>Curiosità</h3>
+              <p>Impariamo sperimentando, non solo memorizzando.</p>
+            </article>
+
+            <article class="value-card">
+              <div class="icon-box">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2" />
+                  <circle cx="9.5" cy="7" r="4" />
+                  <path d="M21 21v-2a4 4 0 0 0-3-3.9" />
+                  <path d="M16 3.1a4 4 0 0 1 0 7.8" />
+                </svg>
+              </div>
+              <h3>Inclusione</h3>
+              <p>Ogni differenza è una risorsa per la comunità.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- OFFERTA FORMATIVA -->
+    <section class="section" id="offerta">
+      <div class="container">
+        <div class="section-heading center reveal">
+          <span class="eyebrow">Offerta formativa</span>
+          <h2>Un percorso per ogni <em>curiosità</em></h2>
+          <p>
+            Dall'infanzia alla secondaria, costruiamo percorsi chiari, inclusivi e
+            ricchi di esperienze reali.
+          </p>
+        </div>
+
+        <div class="course-grid">
+          <article class="course-card featured">
+            <div class="icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M12 6.5C10.7 4.8 8.8 4 6 4H4v15h2c2.8 0 4.7.8 6 2.5C13.3 20.8 15.2 20 18 20h2V4h-2c-2.8 0-4.7.8-6 2.5Z" />
+                <path d="M12 6.5v15" />
+              </svg>
+            </div>
+
+            <span class="course-tag">3–6 anni</span>
+            <h3>Infanzia</h3>
+            <p>Un nido di scoperte: gioco, creatività e primi passi verso l'autonomia.</p>
+            <ul>
+              <li>Spazi esperienziali</li>
+              <li>Continuità educativa</li>
+            </ul>
+            <a class="course-link" href="#contatti">
+              Scopri il percorso
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M5 12h14" />
+                <path d="m13 6 6 6-6 6" />
+              </svg>
+            </a>
+          </article>
+
+          <article class="course-card">
+            <div class="icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M9 3h6" />
+                <path d="M10 3v5.4L4.7 17.8A2.4 2.4 0 0 0 6.8 21h10.4a2.4 2.4 0 0 0 2.1-3.2L14 8.4V3" />
+                <path d="M7.5 15h9" />
+              </svg>
+            </div>
+
+            <span class="course-tag">6–11 anni</span>
+            <h3>Primaria</h3>
+            <p>Lettura, scrittura, numeri e pensiero critico, con attenzione ai talenti di ciascuno.</p>
+            <ul>
+              <li>Laboratori STEM</li>
+              <li>Didattica all'aperto</li>
+            </ul>
+            <a class="course-link" href="#contatti">
+              Scopri il percorso
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M5 12h14" />
+                <path d="m13 6 6 6-6 6" />
+              </svg>
+            </a>
+          </article>
+
+          <article class="course-card">
+            <div class="icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="9" />
+                <path d="M3 12h18" />
+                <path d="M12 3a14.5 14.5 0 0 1 0 18" />
+                <path d="M12 3a14.5 14.5 0 0 0 0 18" />
+              </svg>
+            </div>
+
+            <span class="course-tag">11–14 anni</span>
+            <h3>Secondaria</h3>
+            <p>Una scuola aperta al mondo: lingue, digitale, arte e orientamento al futuro.</p>
+            <ul>
+              <li>Progetti internazionali</li>
+              <li>Orientamento al futuro</li>
+            </ul>
+            <a class="course-link" href="#contatti">
+              Scopri il percorso
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M5 12h14" />
+                <path d="m13 6 6 6-6 6" />
+              </svg>
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVIZI -->
+    <section class="section services" id="servizi">
+      <div class="container services-grid">
+        <div class="section-heading reveal">
+          <span class="eyebrow">Servizi</span>
+          <h2>La scuola, <em>senza pensieri.</em></h2>
+          <p>
+            Organizzazione, attenzione e concretezza: ogni servizio è pensato
+            per semplificare la vita delle famiglie.
+          </p>
+          <a class="btn btn-outline" href="#contatti">Parla con la segreteria</a>
+        </div>
+
+        <div class="service-list reveal">
+          <article class="service-item">
+            <div class="service-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M4 3v7a2 2 0 0 0 2 2h0a2 2 0 0 0 2-2V3" />
+                <path d="M6 12v9" />
+                <path d="M14 3v18" />
+                <path d="M14 3c3 1.5 4 5 2 8H14" />
+              </svg>
+            </div>
+            <div>
+              <h3>Mensa sana e varia</h3>
+              <p>Menù stagionali, attenzione alle allergie e riduzione degli sprechi.</p>
+            </div>
+          </article>
+
+          <article class="service-item">
+            <div class="service-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M12 6.5C10.7 4.8 8.8 4 6 4H4v15h2c2.8 0 4.7.8 6 2.5C13.3 20.8 15.2 20 18 20h2V4h-2c-2.8 0-4.7.8-6 2.5Z" />
+                <path d="M12 6.5v15" />
+              </svg>
+            </div>
+            <div>
+              <h3>Doposcuola</h3>
+              <p>Spazio studio, attività laboratoriali e recupero personalizzato.</p>
+            </div>
+          </article>
+
+          <article class="service-item">
+            <div class="service-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M4 17h16" />
+                <path d="M6 17V6a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v11" />
+                <circle cx="8" cy="19" r="2" />
+                <circle cx="16" cy="19" r="2" />
+                <path d="M4 10h16" />
+              </svg>
+            </div>
+            <div>
+              <h3>Trasporto scolastico</h3>
+              <p>Linee sicure e accompagnamento per gli studenti più piccoli.</p>
+            </div>
+          </article>
+
+          <article class="service-item">
+            <div class="service-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="9" />
+                <path d="m15.5 8.5-2 5-5 2 2-5 5-2Z" />
+              </svg>
+            </div>
+            <div>
+              <h3>Orientamento e inclusione</h3>
+              <p>Sportello di ascolto, supporto DSA e percorsi di orientamento.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUOTE -->
+    <section class="quote-section">
+      <div class="container quote-wrap reveal">
+        <span class="quote-icon" aria-hidden="true">“</span>
+        <blockquote>
+          Ad Aurora non ci limitiamo a preparare gli studenti agli esami: li
+          accompagniamo a diventare persone curiose, gentili e consapevoli.
+        </blockquote>
+        <div class="quote-author">
+          <span class="avatar avatar-1">L</span>
+          <div>
+            <strong>Laura Moretti</strong>
+            <small>Dirigente scolastica</small>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- NEWS -->
+    <section class="section" id="news">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="eyebrow">News</span>
+          <h2>Dal cortile, <em>ogni giorno.</em></h2>
+          <p>Appuntamenti, risultati e storie della nostra comunità.</p>
+        </div>
+
+        <div class="news-grid">
+          <article class="news-card">
+            <div class="news-thumb thumb-1">
+              <span class="news-tag">Open day</span>
+              <span class="news-number">01</span>
+            </div>
+            <div class="news-content">
+              <div class="news-meta">
+                <time datetime="2026-04-12">12 aprile 2026</time>
+                <span>•</span>
+                <span>Eventi</span>
+              </div>
+              <h3>Open day: entra a scuola, senza pensieri.</h3>
+              <p>Visite guidate, laboratori aperti e incontri con gli insegnanti per conoscere il nostro istituto.</p>
+              <a class="news-link" href="#contatti">
+                Scopri di più
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M5 12h14" />
+                  <path d="m13 6 6 6-6 6" />
+                </svg>
+              </a>
+            </div>
+          </article>
+
+          <article class="news-card">
+            <div class="news-thumb thumb-2">
+              <span class="news-tag">Laboratori</span>
+              <span class="news-number">02</span>
+            </div>
+            <div class="news-content">
+              <div class="news-meta">
+                <time datetime="2026-03-04">4 marzo 2026</time>
+                <span>•</span>
+                <span>Didattica</span>
+              </div>
+              <h3>STEM Lab: la curiosità si accende in terza.</h3>
+              <p>Roboti, esperimenti e pensiero creativo: ecco come i nostri studenti esplorano la scienza.</p>
+              <a class="news-link" href="#contatti">
+                Scopri di più
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M5 12h14" />
+                  <path d="m13 6 6 6-6 6" />
+                </svg>
+              </a>
+            </div>
+          </article>
+
+          <article class="news-card">
+            <div class="news-thumb thumb-3">
+              <span class="news-tag">Comunità</span>
+              <span class="news-number">03</span>
+            </div>
+            <div class="news-content">
+              <div class="news-meta">
+                <time datetime="2026-02-20">20 febbraio 2026</time>
+                <span>•</span>
+                <span>Vita scolastica</span>
+              </div>
+              <h3>Il cortile diventa un'aula a cielo aperto.</h3>
+              <p>Un progetto di orto e biodiversità che unisce natura, responsabilità e lavoro di squadra.</p>
+              <a class="news-link" href="#contatti">
+                Scopri di più
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M5 12h14" />
+                  <path d="m13 6 6 6-6 6" />
+                </svg>
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA OPEN DAY -->
+    <section class="cta-band" aria-label="Open day">
+      <div class="container cta-inner reveal">
+        <div>
+          <span class="eyebrow light">Open Day 2026</span>
+          <h2>Conosci Aurora <em>di persona.</em></h2>
+          <p>
+            Visite guidate, laboratori aperti e incontri con gli insegnanti.
+            Ti aspettiamo sabato 11 aprile dalle 10:00 alle 16:00.
+          </p>
+        </div>
+
+        <a class="btn btn-light" href="#contatti">
+          Prenota la tua visita
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M5 12h14" />
+            <path d="m13 6 6 6-6 6" />
+          </svg>
+        </a>
+      </div>
+    </section>
+
+    <!-- CONTATTI -->
+    <section class="section contact" id="contatti">
+      <div class="container contact-grid">
+        <div class="contact-info reveal">
+          <span class="eyebrow">Contatti</span>
+          <h2>Parliamone.</h2>
+          <p>
+            Hai una domanda, un dubbio o semplicemente vuoi conoscerci?
+            Scrivici: ti risponderemo entro 1–2 giorni lavorativi.
+          </p>
+
+          <ul class="contact-details">
+            <li>
+              <span class="contact-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z" />
+                  <circle cx="12" cy="10" r="2.5" />
+                </svg>
+              </span>
+              <div>
+                <strong>Indirizzo</strong>
+                <span>Via della Scuola 12, 20134 Milano</span>
+              </div>
+            </li>
+
+            <li>
+              <span class="contact-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7A2 2 0 0 1 22 16.9Z" />
+                </svg>
+              </span>
+              <div>
+                <strong>Telefono</strong>
+                <span>+39 02 1234 5678</span>
+              </div>
+            </li>
+
+            <li>
+              <span class="contact-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="2" y="4" width="20" height="16" rx="2" />
+                  <path d="m22 7-8 5a2 2 0 0 1-2 0L2 7" />
+                </svg>
+              </span>
+              <div>
+                <strong>Email</strong>
+                <span>info@scuola-aurora.it</span>
+              </div>
+            </li>
+
+            <li>
+              <span class="contact-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <circle cx="12" cy="12" r="9" />
+                  <path d="M12 7v5l3 2" />
+                </svg>
+              </span>
+              <div>
+                <strong>Segreteria</strong>
+                <span>Lun–Ven, 08:30–13:30</span>
+              </div>
+            </li>
+          </ul>
+
+          <div class="socials" aria-label="Social">
+            <a class="social-link" href="#" aria-label="Instagram">IG</a>
+            <a class="social-link" href="#" aria-label="Facebook">FB</a>
+            <a class="social-link" href="#" aria-label="LinkedIn">IN</a>
+          </div>
+        </div>
+
+        <form class="contact-form reveal" id="contact-form">
+          <div class="form-grid">
+            <div class="form-field">
+              <label for="nome">Nome e cognome</label>
+              <input id="nome" name="nome" type="text" placeholder="Mario Rossi" autocomplete="name" required />
+            </div>
+
+            <div class="form-field">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" placeholder="mario@email.it" autocomplete="email" required />
+            </div>
+
+            <div class="form-field">
+              <label for="telefono">Telefono</label>
+              <input id="telefono" name="telefono" type="tel" placeholder="+39 ..." autocomplete="tel" />
+            </div>
+
+            <div class="form-field">
+              <label for="interesse">Mi interessa</label>
+              <select id="interesse" name="interesse">
+                <option>Open Day</option>
+                <option>Iscrizione</option>
+                <option>Laboratori</option>
+                <option>Altro</option>
+              </select>
+            </div>
+
+            <div class="form-field full">
+              <label for="messaggio">Messaggio</label>
+              <textarea id="messaggio" name="messaggio" placeholder="Scrivi la tua domanda..." required></textarea>
+            </div>
+          </div>
+
+          <label class="checkbox-field">
+            <input type="checkbox" required />
+            <span>
+              Ho letto l'informativa privacy e acconsento al trattamento dei dati
+              per rispondere alla mia richiesta.
+            </span>
+          </label>
+
+          <div class="form-actions">
+            <button class="btn btn-primary" type="submit">
+              Invia richiesta
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M5 12h14" />
+                <path d="m13 6 6 6-6 6" />
+              </svg>
+            </button>
+            <span class="form-note">Ti rispondiamo entro 1–2 giorni lavorativi.</span>
+          </div>
+
+          <p class="form-success" role="status" aria-live="polite" hidden></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="#top" aria-label="Scuola Aurora, torna all'inizio">
+          <span class="brand-mark" aria-hidden="true">A</span>
+          <span class="brand-text">
+            Scuola Aurora
+            <small>Istituto Comprensivo</small>
+          </span>
+        </a>
+        <p>Una scuola aperta, inclusiva e piena di futuro.</p>
+      </div>
+
+      <div class="footer-col">
+        <h3>Scuola</h3>
+        <a href="#chi-siamo">Chi siamo</a><br />
+        <a href="#offerta">Offerta formativa</a><br />
+        <a href="#servizi">Servizi</a><br />
+        <a href="#news">News</a>
+      </div>
+
+      <div class="footer-col">
+        <h3>Risorse</h3>
+        <a href="#contatti">Open Day</a><br />
+        <a href="#contatti">Segreteria</a><br />
+        <a href="#contatti">Iscrizioni</a><br />
+        <a href="#contatti">Contatti</a>
+      </div>
+
+      <div class="footer-col">
+        <h3>Contatti</h3>
+        <p><a href="mailto:info@scuola-aurora.it">info@scuola-aurora.it</a></p>
+        <p><a href="tel:+390212345678">+39 02 1234 5678</a></p>
+        <p>
+          Via della Scuola 12<br />
+          20134 Milano
+        </p>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <p>© <span id="year">2026</span> Scuola Aurora. Tutti i diritti riservati.</p>
+      <p>
+        <a href="#">Privacy Policy</a> ·
+        <a href="#">Cookie Policy</a> ·
+        <a href="#">Accessibilità</a>
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    const header = document.querySelector(".site-header");
+    const menuToggle = document.querySelector(".menu-toggle");
+    const mainNav = document.getElementById("main-nav");
+    const navLinks = mainNav.querySelectorAll("a");
+    const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    function setMenu(open) {
+      menuToggle.setAttribute("aria-expanded", String(open));
+      menuToggle.setAttribute("aria-label", open ? "Chiudi menu" : "Apri menu");
+      mainNav.classList.toggle("open", open);
+      document.body.classList.toggle("nav-open", open);
+    }
+
+    menuToggle.addEventListener("click", () => {
+      setMenu(menuToggle.getAttribute("aria-expanded") !== "true");
+    });
+
+    navLinks.forEach((link) => {
+      link.addEventListener("click", () => setMenu(false));
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") setMenu(false);
+    });
+
+    document.addEventListener("click", (event) => {
+      if (!mainNav.classList.contains("open")) return;
+      if (!mainNav.contains(event.target) && !menuToggle.contains(event.target)) {
+        setMenu(false);
+      }
+    });
+
+    function handleScroll() {
+      header.classList.toggle("scrolled", window.scrollY > 12);
+    }
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 920) setMenu(false);
+    });
+
+    const revealElements = document.querySelectorAll(".reveal");
+
+    if (prefersReduced || !("IntersectionObserver" in window)) {
+      revealElements.forEach((element) => element.classList.add("visible"));
+    } else {
+      const revealObserver = new IntersectionObserver(
+        (entries, observer) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.12 }
+      );
+
+      revealElements.forEach((element) => revealObserver.observe(element));
+    }
+
+    const counters = document.querySelectorAll("[data-counter]");
+
+    if (!prefersReduced && "IntersectionObserver" in window) {
+      counters.forEach((counter) => {
+        counter.textContent = "0" + (counter.dataset.suffix || "");
+      });
+
+      const counterObserver = new IntersectionObserver(
+        (entries, observer) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+
+            const counter = entry.target;
+            const target = parseInt(counter.dataset.counter, 10);
+            const suffix = counter.dataset.suffix || "";
+            const duration = 1200;
+            const start = performance.now();
+
+            function animate(now) {
+              const progress = Math.min((now - start) / duration, 1);
+              const eased = 1 - Math.pow(1 - progress, 3);
+              counter.textContent = Math.round(target * eased) + suffix;
+
+              if (progress < 1) {
+                requestAnimationFrame(animate);
+              }
+            }
+
+            requestAnimationFrame(animate);
+            observer.unobserve(entry.target);
+          });
+        },
+        { threshold: 0.6 }
+      );
+
+      counters.forEach((counter) => counterObserver.observe(counter));
+    }
+
+    const contactForm = document.getElementById("contact-form");
+
+    if (contactForm) {
+      contactForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        const successMessage = contactForm.querySelector(".form-success");
+
+        if (successMessage) {
+          successMessage.hidden = false;
+          successMessage.textContent =
+            "Grazie! Abbiamo ricevuto la tua richiesta. Ti risponderemo entro 1–2 giorni lavorativi.";
+        }
+
+        contactForm.reset();
+      });
+    }
+
+    const year = document.getElementById("year");
+
+    if (year) {
+      year.textContent = new Date().getFullYear();
+    }
+  </script>
+</body>
+</html>

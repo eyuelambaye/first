@@ -34,4 +34,8 @@ Git è un software di controllo delle versioni distribuito che conserva la crono
 - Migliore per risposte ampie e dettagliate: Nemotron 3 Ultra.
 - Migliore come opzione open ed equilibrata: Gemma 4 26B A4B.
 - Per valutare davvero quale modello sia migliore nel coding, sarebbe utile eseguire gli stessi test su generazione di funzioni, debugging, refactoring e spiegazione del codice.
-hguvgyvu
+## Test dei limiti
+-Libro inventato: ha detto <<non lo conosco>>  
+stessa domanda due volta: diverse
+ultima versione di python : sbagliata
+(python.org dice : Python 3.15.2)
